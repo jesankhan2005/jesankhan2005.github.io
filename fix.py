@@ -1,5 +1,8 @@
 content = open('index.html', 'r').read()
-new_card = """    <div class="project-card">
+
+# ভুল অংশ - IPL card এর ভেতরে WhatsApp card আছে
+old = '''      <div class="project-body">
+            <div class="project-card">
       <div class="project-header">
         <span class="project-icon">💬</span>
         <div class="project-links">
@@ -9,7 +12,7 @@ new_card = """    <div class="project-card">
       </div>
       <div class="project-body">
         <h3>WhatsApp Chat Analyzer</h3>
-        <p>Analyze WhatsApp chats — messages, timelines, word cloud, emoji analysis and more!</p>
+        <p>Analyze WhatsApp chats \u2014 messages, timelines, word cloud, emoji analysis and more!</p>
         <div class="project-tags">
           <span class="tag">Python</span>
           <span class="tag">Streamlit</span>
@@ -18,7 +21,11 @@ new_card = """    <div class="project-card">
         </div>
       </div>
     </div>
-    """
-content = content.replace('<h3>IPL Cricket SQL Analysis</h3>', new_card + '<h3>IPL Cricket SQL Analysis</h3>')
+    <h3>IPL Cricket SQL Analysis</h3>'''
+
+new = '''      <div class="project-body">
+        <h3>IPL Cricket SQL Analysis</h3>'''
+
+content = content.replace(old, new, 1)
 open('index.html', 'w').write(content)
 print('Done!')
