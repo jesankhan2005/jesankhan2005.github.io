@@ -3,360 +3,362 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jesan Khan | Data Analyst</title>
+<title>Jesan Khan | Data Analyst & Developer</title>
 <meta name="description" content="Jesan Khan - Data Analyst & Python Developer. B.Sc Data Science student at MAKAUT University. Portfolio of Data Science projects.">
 <meta name="keywords" content="Jesan Khan, Data Analyst, Python, Machine Learning, MAKAUT, Data Science">
 <meta name="author" content="Jesan Khan">
 <meta property="og:title" content="Jesan Khan | Data Analyst Portfolio">
-<meta property="og:description" content="Data Science projects, ML models, and web apps by Jesan Khan">
 <meta property="og:url" content="https://jesankhan2005.github.io">
-<link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
-* { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --accent: #00ff88;
+    --accent2: #ff3d6b;
+    --accent3: #7b5ea7;
+    --text: #e8e8f0;
+    --muted: #6b6b80;
+    --border: rgba(255,255,255,0.07);
+    --mono: 'Space Mono', monospace;
+    --display: 'Syne', sans-serif;
+  }
 
-:root {
-  --primary: #00d4aa;
-  --dark: #0a0a1a;
-  --card: #111128;
-  --text: #e0e0e0;
-  --gray: #888;
-}
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--bg); color: var(--text); font-family: var(--mono); overflow-x: hidden; cursor: none; }
 
-body {
-  font-family: 'Fira Code', monospace;
-  background: linear-gradient(rgba(10,10,26,0.97), rgba(10,10,26,0.97)),
-  url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Ctext y='50' font-size='14' fill='%2300d4aa' opacity='0.04' font-family='monospace'%3E010110%3C/text%3E%3Ctext y='80' font-size='14' fill='%2300d4aa' opacity='0.04' font-family='monospace'%3E110010%3C/text%3E%3C/svg%3E");
-  color: var(--text);
-  scroll-behavior: smooth;
-}
+  .cursor { width: 12px; height: 12px; background: var(--accent); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9999; transition: transform 0.1s ease; mix-blend-mode: difference; }
+  .cursor-ring { width: 36px; height: 36px; border: 1px solid var(--accent); border-radius: 50%; position: fixed; top: 0; left: 0; pointer-events: none; z-index: 9998; transition: transform 0.15s ease, width 0.2s, height 0.2s; transform: translate(-50%, -50%); opacity: 0.5; }
 
-/* NAV */
-nav {
-  position: fixed; top: 0; width: 100%;
-  background: rgba(10,10,26,0.95);
-  backdrop-filter: blur(10px);
-  padding: 18px 40px;
-  display: flex; justify-content: space-between; align-items: center;
-  z-index: 1000;
-  border-bottom: 1px solid rgba(0,212,170,0.2);
-}
-.logo { font-size: 22px; font-weight: 700; color: var(--primary); }
-.nav-links a {
-  color: var(--text); text-decoration: none;
-  margin-left: 30px; font-size: 15px;
-  transition: color 0.3s;
-}
-.nav-links a:hover { color: var(--primary); }
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--accent); }
 
-/* HERO */
-#hero {
-  min-height: 100vh;
-  display: flex; align-items: center; justify-content: center;
-  text-align: center;
-  bbackground: radial-gradient(ellipse at center, #0d1f3c 0%, var(--dark) 70%);
-background-image: radial-gradient(ellipse at center, #0d1f3c 0%, var(--dark) 70%),
-  url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%2300d4aa' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  padding: 100px 20px 60px;
-}
-.hero-content h1 {
-  font-size: 58px; font-weight: 800;
-  background: linear-gradient(135deg, #fff, var(--primary));
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  margin-bottom: 15px;
-}
-.hero-content h2 {
-  font-size: 22px; color: var(--primary);
-  font-weight: 400; margin-bottom: 20px;
-}
-.hero-content p {
-  font-size: 17px; color: var(--gray);
-  max-width: 550px; margin: 0 auto 35px; line-height: 1.7;
-}
-.hero-btns { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-.btn {
-  padding: 13px 32px; border-radius: 50px;
-  font-size: 15px; font-weight: 600;
-  text-decoration: none; transition: all 0.3s; cursor: pointer; border: none;
-}
-.btn-primary { background: var(--primary); color: #000; }
-.btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 30px rgba(0,212,170,0.4); }
-.btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
-.btn-outline:hover { background: var(--primary); color: #000; transform: translateY(-3px); }
+  body::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 1000; opacity: 0.4; }
 
-.avatar {
-  width: 160px; height: 160px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--primary), #0066ff);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 70px; margin: 0 auto 30px;
-  box-shadow: 0 0 40px rgba(0,212,170,0.3);
-}
+  nav { position: fixed; top: 0; width: 100%; padding: 1.5rem 3rem; display: flex; align-items: center; justify-content: space-between; z-index: 100; border-bottom: 1px solid transparent; transition: border-color 0.3s, backdrop-filter 0.3s, background 0.3s; }
+  nav.scrolled { border-color: var(--border); backdrop-filter: blur(20px); background: rgba(10,10,15,0.8); }
+  .nav-logo { font-family: var(--display); font-weight: 800; font-size: 1.4rem; color: var(--accent); text-decoration: none; letter-spacing: -0.02em; }
+  .nav-logo span { color: var(--accent2); }
+  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
+  .nav-links a { color: var(--muted); text-decoration: none; font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; transition: color 0.2s; position: relative; }
+  .nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 1px; background: var(--accent); transition: width 0.3s; }
+  .nav-links a:hover { color: var(--accent); }
+  .nav-links a:hover::after { width: 100%; }
 
-/* SECTIONS */
-section { padding: 90px 40px; max-width: 1100px; margin: 0 auto; }
-.section-title {
-  font-size: 36px; font-weight: 700;
-  text-align: center; margin-bottom: 60px;
-  position: relative;
-}
-.section-title span { color: var(--primary); }
-.section-title::after {
-  content: ''; display: block;
-  width: 60px; height: 4px;
-  background: var(--primary); border-radius: 2px;
-  margin: 15px auto 0;
-}
+  #hero { min-height: 100vh; display: flex; align-items: center; padding: 0 3rem; position: relative; overflow: hidden; }
 
-/* ABOUT */
-.about-grid {
-  display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center;
-}
-.about-text p { color: var(--gray); line-height: 1.8; font-size: 16px; margin-bottom: 15px; }
-.about-info { display: flex; flex-direction: column; gap: 12px; margin-top: 20px; }
-.info-item { display: flex; gap: 10px; align-items: center; }
-.info-label { color: var(--primary); font-weight: 600; min-width: 80px; }
-.info-value { color: var(--text); }
-.stats-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.stat-card {
-  background: var(--card); padding: 25px; border-radius: 15px;
-  text-align: center; border: 1px solid rgba(0,212,170,0.1);
-}
-.stat-number { font-size: 36px; font-weight: 800; color: var(--primary); }
-.stat-label { color: var(--gray); font-size: 13px; margin-top: 5px; }
+  .hero-grid { position: absolute; inset: 0; background-image: linear-gradient(rgba(0,255,136,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,255,136,0.03) 1px, transparent 1px); background-size: 80px 80px; animation: gridMove 20s linear infinite; }
+  @keyframes gridMove { from { transform: translateY(0); } to { transform: translateY(80px); } }
 
-/* SKILLS */
-#skills { background: rgba(255,255,255,0.02); }
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
-.skill-category {
-  background: var(--card); padding: 30px; border-radius: 15px;
-  border: 1px solid rgba(0,212,170,0.1);
-  transition: transform 0.3s;
-}
-.skill-category:hover { transform: translateY(-5px); border-color: var(--primary); }
-.skill-category h3 { color: var(--primary); margin-bottom: 20px; font-size: 18px; }
-.skill-item { margin-bottom: 15px; }
-.skill-name { display: flex; justify-content: space-between; margin-bottom: 6px; font-size: 14px; }
-.skill-bar { background: rgba(255,255,255,0.1); border-radius: 10px; height: 8px; }
-.skill-fill {
-  height: 100%; border-radius: 10px;
-  background: linear-gradient(90deg, var(--primary), #0066ff);
-  transition: width 1s ease;
-}
+  .hero-glow { position: absolute; width: 600px; height: 600px; border-radius: 50%; background: radial-gradient(circle, rgba(0,255,136,0.08) 0%, transparent 70%); top: 50%; left: 50%; transform: translate(-50%, -50%); animation: pulse 4s ease-in-out infinite; }
+  @keyframes pulse { 0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.8; } 50% { transform: translate(-50%, -50%) scale(1.1); opacity: 1; } }
 
-/* PROJECTS */
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-.project-card {
-  background: var(--card); border-radius: 15px; overflow: hidden;
-  border: 1px solid rgba(0,212,170,0.1); transition: all 0.3s;
-}
-.project-card:hover { transform: translateY(-8px); border-color: var(--primary); box-shadow: 0 20px 40px rgba(0,0,0,0.3); }
-.project-header {
-  padding: 25px 25px 0;
-  display: flex; justify-content: space-between; align-items: center;
-}
-.project-icon { font-size: 36px; }
-.project-links a {
-  color: var(--primary); text-decoration: none;
-  font-size: 13px; margin-left: 12px;
-  padding: 5px 12px; border: 1px solid var(--primary);
-  border-radius: 20px; transition: all 0.3s;
-}
-.project-links a:hover { background: var(--primary); color: #000; }
-.project-body { padding: 20px 25px 25px; }
-.project-body h3 { font-size: 18px; margin-bottom: 10px; }
-.project-body p { color: var(--gray); font-size: 14px; line-height: 1.6; margin-bottom: 15px; }
-.project-tags { display: flex; flex-wrap: wrap; gap: 8px; }
-.tag {
-  background: rgba(0,212,170,0.1); color: var(--primary);
-  padding: 4px 12px; border-radius: 20px; font-size: 12px;
-  border: 1px solid rgba(0,212,170,0.2);
-}
+  .hero-content { position: relative; z-index: 2; max-width: 900px; }
 
-/* CONTACT */
-#contact { background: rgba(255,255,255,0.02); }
-.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
-.contact-info h3 { font-size: 24px; margin-bottom: 20px; }
-.contact-info p { color: var(--gray); line-height: 1.8; margin-bottom: 30px; }
-.contact-item {
-  display: flex; align-items: center; gap: 15px;
-  margin-bottom: 20px; padding: 15px; background: var(--card);
-  border-radius: 10px; border: 1px solid rgba(0,212,170,0.1);
-}
-.contact-icon { font-size: 24px; }
-.contact-detail a { color: var(--primary); text-decoration: none; }
-.contact-detail p { color: var(--gray); font-size: 13px; }
-.social-links { display: flex; gap: 15px; margin-top: 25px; }
-.social-btn {
-  padding: 12px 25px; border-radius: 10px;
-  text-decoration: none; font-weight: 600; font-size: 14px;
-  transition: all 0.3s;
-}
-.github-btn { background: #24292e; color: #fff; }
-.github-btn:hover { background: #444; transform: translateY(-3px); }
-.kaggle-btn { background: #20BEFF; color: #fff; }
-.kaggle-btn:hover { opacity: 0.85; transform: translateY(-3px); }
-.linkedin-btn { background: #0077b5; color: #fff; }
-.linkedin-btn:hover { opacity: 0.85; transform: translateY(-3px); }
+  .hero-tag { display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(0,255,136,0.08); border: 1px solid rgba(0,255,136,0.2); color: var(--accent); padding: 0.4rem 1rem; border-radius: 2px; font-size: 0.7rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 2rem; animation: fadeInUp 0.6s ease both; }
+  .hero-tag::before { content: ''; width: 6px; height: 6px; background: var(--accent); border-radius: 50%; animation: blink 1.5s ease-in-out infinite; }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
 
-/* FOOTER */
-footer {
-  text-align: center; padding: 30px;
-  border-top: 1px solid rgba(0,212,170,0.1);
-  color: var(--gray); font-size: 14px;
-}
-footer span { color: var(--primary); }
+  .hero-name { font-family: var(--display); font-size: clamp(3.5rem, 10vw, 8rem); font-weight: 800; line-height: 0.9; letter-spacing: -0.04em; margin-bottom: 1.5rem; animation: fadeInUp 0.6s 0.1s ease both; }
+  .hero-name .line2 { color: transparent; -webkit-text-stroke: 1px rgba(255,255,255,0.2); }
+  .hero-name .accent { color: var(--accent); }
 
-@media (max-width: 768px) {
-  .hero-content h1 { font-size: 36px; }
-  .about-grid, .contact-grid { grid-template-columns: 1fr; }
-  nav { padding: 15px 20px; }
-  .nav-links a { margin-left: 15px; font-size: 13px; }
-  section { padding: 60px 20px; }
-}
+  .hero-desc { font-size: 0.9rem; color: var(--muted); line-height: 1.8; max-width: 480px; margin-bottom: 3rem; animation: fadeInUp 0.6s 0.2s ease both; }
+
+  .hero-cta { display: flex; gap: 1rem; flex-wrap: wrap; animation: fadeInUp 0.6s 0.3s ease both; }
+  .btn { display: inline-flex; align-items: center; gap: 0.6rem; padding: 0.9rem 2rem; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border: none; cursor: none; transition: all 0.25s; }
+  .btn-primary { background: var(--accent); color: #000; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+  .btn-primary:hover { background: #00cc6e; transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--text); border: 1px solid var(--border); clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-2px); }
+
+  .hero-stats { position: absolute; right: 3rem; bottom: 3rem; display: flex; flex-direction: column; gap: 1.5rem; animation: fadeInUp 0.6s 0.4s ease both; }
+  .stat { text-align: right; }
+  .stat-num { font-family: var(--display); font-size: 2.5rem; font-weight: 800; color: var(--accent); line-height: 1; }
+  .stat-label { font-size: 0.65rem; color: var(--muted); letter-spacing: 0.1em; text-transform: uppercase; }
+
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+  section { padding: 8rem 3rem; }
+
+  .section-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 5rem; }
+  .section-num { font-size: 0.7rem; color: var(--accent); letter-spacing: 0.15em; opacity: 0.6; }
+  .section-title { font-family: var(--display); font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; letter-spacing: -0.03em; }
+  .section-line { flex: 1; height: 1px; background: linear-gradient(90deg, var(--border), transparent); }
+
+  #about { background: var(--surface); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+  .about-visual { position: relative; aspect-ratio: 1; max-width: 420px; }
+  .about-img-placeholder { width: 100%; height: 100%; background: linear-gradient(135deg, rgba(0,255,136,0.1), rgba(123,94,167,0.1)); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; font-family: var(--display); font-size: 6rem; font-weight: 800; color: var(--accent); position: relative; overflow: hidden; }
+  .about-img-placeholder::before { content: ''; position: absolute; inset: 0; background: repeating-linear-gradient(45deg, transparent, transparent 20px, rgba(0,255,136,0.03) 20px, rgba(0,255,136,0.03) 21px); }
+  .about-frame { position: absolute; border: 1px solid var(--accent); width: 85%; height: 85%; top: -15px; left: -15px; opacity: 0.3; }
+  .about-frame2 { position: absolute; border: 1px solid var(--accent2); width: 85%; height: 85%; bottom: -15px; right: -15px; opacity: 0.3; }
+  .about-text p { color: var(--muted); line-height: 1.9; font-size: 0.85rem; margin-bottom: 1.5rem; }
+  .about-text p strong { color: var(--text); }
+  .about-info { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 2rem; }
+  .info-item { border-left: 2px solid var(--accent); padding-left: 1rem; }
+  .info-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .info-value { font-size: 0.85rem; color: var(--text); margin-top: 0.2rem; }
+
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1.5rem; }
+  .skill-card { background: var(--surface); border: 1px solid var(--border); padding: 2rem; position: relative; overflow: hidden; transition: border-color 0.3s, transform 0.3s; clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 16px 100%, 0 calc(100% - 16px)); }
+  .skill-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 2px; background: linear-gradient(90deg, var(--accent), transparent); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
+  .skill-card:hover { border-color: rgba(0,255,136,0.3); transform: translateY(-4px); }
+  .skill-card:hover::before { transform: scaleX(1); }
+  .skill-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .skill-name { font-family: var(--display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.8rem; }
+  .skill-bar { height: 2px; background: var(--border); margin-bottom: 0.5rem; position: relative; overflow: hidden; }
+  .skill-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent3)); width: 0; transition: width 1s ease; }
+  .skill-bar-fill.animated { width: var(--w); }
+  .skill-percent { font-size: 0.7rem; color: var(--accent); }
+  .skill-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
+  .skill-tag { padding: 0.2rem 0.6rem; background: rgba(0,255,136,0.06); border: 1px solid rgba(0,255,136,0.15); font-size: 0.65rem; color: var(--muted); letter-spacing: 0.05em; }
+
+  #projects { background: var(--surface); }
+  .projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 2rem; }
+  .project-card { background: var(--bg); border: 1px solid var(--border); overflow: hidden; position: relative; transition: transform 0.3s, border-color 0.3s; }
+  .project-card:hover { transform: translateY(-6px); border-color: rgba(0,255,136,0.25); }
+  .project-img { height: 200px; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+  .project-img-bg { position: absolute; inset: 0; transition: transform 0.5s; }
+  .project-card:hover .project-img-bg { transform: scale(1.05); }
+  .p1 .project-img-bg { background: linear-gradient(135deg, #0a1628, #1a3a5c); }
+  .p2 .project-img-bg { background: linear-gradient(135deg, #1a0a28, #3d1a5c); }
+  .p3 .project-img-bg { background: linear-gradient(135deg, #0a2818, #1a5c3d); }
+  .p4 .project-img-bg { background: linear-gradient(135deg, #28180a, #5c3d1a); }
+  .p5 .project-img-bg { background: linear-gradient(135deg, #0a1a28, #1a3d5c); }
+  .p6 .project-img-bg { background: linear-gradient(135deg, #1a280a, #3d5c1a); }
+  .p7 .project-img-bg { background: linear-gradient(135deg, #280a1a, #5c1a3d); }
+  .p8 .project-img-bg { background: linear-gradient(135deg, #0a2828, #1a5c5c); }
+  .p9 .project-img-bg { background: linear-gradient(135deg, #28280a, #5c5c1a); }
+  .project-img-icon { font-size: 3rem; position: relative; z-index: 1; filter: drop-shadow(0 0 20px rgba(0,255,136,0.3)); }
+  .project-number { position: absolute; top: 1rem; left: 1rem; font-size: 0.65rem; color: var(--accent); letter-spacing: 0.15em; z-index: 2; background: rgba(0,0,0,0.5); padding: 0.2rem 0.6rem; }
+  .project-body { padding: 1.5rem; }
+  .project-title { font-family: var(--display); font-size: 1.2rem; font-weight: 700; margin-bottom: 0.8rem; }
+  .project-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.7; margin-bottom: 1.2rem; }
+  .project-tech { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.5rem; }
+  .tech-tag { padding: 0.2rem 0.6rem; border: 1px solid var(--border); font-size: 0.65rem; color: var(--muted); }
+  .project-links { display: flex; gap: 1rem; }
+  .project-link { font-size: 0.7rem; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 0.4rem; transition: color 0.2s; }
+  .project-link:hover { color: var(--accent); }
+
+  #contact {}
+  .contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; }
+  .contact-info h3 { font-family: var(--display); font-size: 2.5rem; font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
+  .contact-info h3 em { font-style: normal; color: var(--accent); }
+  .contact-info p { color: var(--muted); font-size: 0.85rem; line-height: 1.8; margin-bottom: 2rem; }
+  .contact-links { display: flex; flex-direction: column; gap: 1rem; }
+  .contact-link-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.5rem; border: 1px solid var(--border); text-decoration: none; color: var(--text); transition: border-color 0.3s, background 0.3s; }
+  .contact-link-item:hover { border-color: var(--accent); background: rgba(0,255,136,0.04); }
+  .contact-link-icon { font-size: 1.2rem; }
+  .contact-link-text { font-size: 0.8rem; }
+  .contact-link-label { color: var(--muted); font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.1em; }
+  .contact-link-arrow { margin-left: auto; color: var(--muted); transition: color 0.3s; }
+  .contact-link-item:hover .contact-link-arrow { color: var(--accent); }
+  .contact-form { display: flex; flex-direction: column; gap: 1.2rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.5rem; }
+  .form-label { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .form-input, .form-textarea { background: var(--surface); border: 1px solid var(--border); color: var(--text); padding: 0.9rem 1.2rem; font-family: var(--mono); font-size: 0.8rem; outline: none; transition: border-color 0.3s; resize: none; }
+  .form-input:focus, .form-textarea:focus { border-color: var(--accent); }
+  .form-textarea { height: 140px; }
+  .form-submit { background: var(--accent); color: #000; border: none; padding: 1rem 2rem; font-family: var(--mono); font-size: 0.75rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: none; transition: background 0.25s, transform 0.25s; clip-path: polygon(0 0, calc(100% - 10px) 0, 100% 10px, 100% 100%, 10px 100%, 0 calc(100% - 10px)); }
+  .form-submit:hover { background: #00cc6e; transform: translateY(-2px); }
+
+  footer { border-top: 1px solid var(--border); padding: 2rem 3rem; display: flex; align-items: center; justify-content: space-between; background: var(--surface); }
+  footer .logo { font-family: var(--display); font-size: 1.2rem; font-weight: 800; color: var(--accent); }
+  footer .logo span { color: var(--accent2); }
+  footer p { font-size: 0.7rem; color: var(--muted); }
+  .footer-socials { display: flex; gap: 1.5rem; }
+  .footer-social { font-size: 0.7rem; color: var(--muted); text-decoration: none; letter-spacing: 0.1em; text-transform: uppercase; transition: color 0.2s; }
+  .footer-social:hover { color: var(--accent); }
+
+  .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 768px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    section { padding: 5rem 1.5rem; }
+    #hero { padding: 0 1.5rem; }
+    .about-grid, .contact-inner { grid-template-columns: 1fr; gap: 3rem; }
+    .hero-stats { position: static; margin-top: 3rem; flex-direction: row; gap: 2rem; }
+    .hero-name { font-size: clamp(2.5rem, 15vw, 5rem); }
+  }
 </style>
 </head>
 <body>
 
+<div class="cursor" id="cursor"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+
 <!-- NAV -->
-<nav>
-  <div class="logo">JK.</div>
-  <div class="nav-links">
-    <a href="#hero">Home</a>
-    <a href="#about">About</a>
-    <a href="#skills">Skills</a>
-    <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
-  </div>
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">JK<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
 </nav>
 
 <!-- HERO -->
-<div id="hero">
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
   <div class="hero-content">
-    <div class="avatar">👨‍💻</div>
-    <h1>Jesan Khan</h1>
-    <h2>Data Analyst | Python Developer | Game Dev</h2>
-    <p>2nd Year B.Sc Data Science student at MAKAUT University.
-    Passionate about turning raw data into meaningful insights.</p>
-    <div class="hero-btns">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-outline">Contact Me</a>
+    <div class="hero-tag">Open to Internships & Opportunities</div>
+    <h1 class="hero-name">
+      JESAN<br>
+      <span class="line2">KHAN</span><br>
+      <span class="accent">DATA.</span>
+    </h1>
+    <p class="hero-desc">
+      Data Analyst & Python Developer. I turn raw data into meaningful insights — from SQL analysis to ML models and live web apps.
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">↓ View Projects</a>
+      <a href="#contact" class="btn btn-outline">Get In Touch</a>
     </div>
   </div>
-</div>
+  <div class="hero-stats">
+    <div class="stat">
+      <div class="stat-num">14+</div>
+      <div class="stat-label">Projects</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">7.8M+</div>
+      <div class="stat-label">Rows Analyzed</div>
+    </div>
+    <div class="stat">
+      <div class="stat-num">78%</div>
+      <div class="stat-label">Kaggle Score</div>
+    </div>
+  </div>
+</section>
 
 <!-- ABOUT -->
 <section id="about">
-  <h2 class="section-title">About <span>Me</span></h2>
+  <div class="section-header reveal">
+    <span class="section-num">01</span>
+    <h2 class="section-title">About Me</h2>
+    <div class="section-line"></div>
+  </div>
   <div class="about-grid">
-    <div class="about-text">
-      <p>Hi! I'm Jesan Khan, a passionate Data Science student from Kolkata, West Bengal. I love working with data, building machine learning models, and creating web applications.</p>
-      <p>From analyzing cricket stats with SQL to building browser games — I enjoy every aspect of technology and data.</p>
+    <div class="about-visual reveal">
+      <div class="about-img-placeholder">JK</div>
+      <div class="about-frame"></div>
+      <div class="about-frame2"></div>
+    </div>
+    <div class="about-text reveal">
+      <p>
+        Hey! I'm <strong>Jesan Khan</strong> — a passionate Data Science student based in <strong>Kolkata, West Bengal</strong>. I specialize in turning raw data into meaningful insights using Python, SQL, and Machine Learning.
+      </p>
+      <p>
+        From analyzing 7.8M+ crime records to building live web apps and browser games — I enjoy every aspect of technology and data. I'm currently pursuing <strong>B.Sc Data Science</strong> at MAKAUT University (2nd Year).
+      </p>
+      <p>
+        My approach: <strong>analyze deep, build smart, ship fast.</strong>
+      </p>
       <div class="about-info">
         <div class="info-item">
-          <span class="info-label">📍 Location</span>
-          <span class="info-value">Kolkata, West Bengal</span>
+          <div class="info-label">Location</div>
+          <div class="info-value">Kolkata, India</div>
         </div>
         <div class="info-item">
-          <span class="info-label">🎓 Degree</span>
-          <span class="info-value">B.Sc Data Science, MAKAUT</span>
+          <div class="info-label">Available</div>
+          <div class="info-value">Internship / Freelance</div>
         </div>
         <div class="info-item">
-          <span class="info-label">📧 Email</span>
-          <span class="info-value">jesankhan743357@gmail.com</span>
+          <div class="info-label">Focus</div>
+          <div class="info-value">Data Science & ML</div>
         </div>
         <div class="info-item">
-          <span class="info-label">💼 Goal</span>
-          <span class="info-value">Data Analyst</span>
+          <div class="info-label">Email</div>
+          <div class="info-value">jesankhan743357@gmail.com</div>
         </div>
-      </div>
-    </div>
-    <div class="stats-grid">
-      <div class="stat-card">
-        <div class="stat-number">10+</div>
-        <div class="stat-label">Projects Completed</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">7.8M+</div>
-        <div class="stat-label">Rows of Data Analyzed</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">78%</div>
-        <div class="stat-label">Kaggle Titanic Score</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">4</div>
-        <div class="stat-label">Kaggle Notebooks</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">2</div>
-        <div class="stat-label">Live Web Apps</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-number">2nd</div>
-        <div class="stat-label">Year Student</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- SKILLS -->
-<section id="skills" style="max-width:1100px;margin:0 auto;">
-  <h2 class="section-title">Technical <span>Skills</span></h2>
+<section id="skills">
+  <div class="section-header reveal">
+    <span class="section-num">02</span>
+    <h2 class="section-title">Skills</h2>
+    <div class="section-line"></div>
+  </div>
   <div class="skills-grid">
-    <div class="skill-category">
-      <h3>🐍 Programming</h3>
-      <div class="skill-item">
-        <div class="skill-name"><span>Python</span><span>85%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>SQL</span><span>80%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>JavaScript</span><span>65%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>HTML/CSS</span><span>75%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🐍</span>
+      <div class="skill-name">Python</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--w: 85%"></div></div>
+      <div class="skill-percent">85%</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Pandas</span>
+        <span class="skill-tag">NumPy</span>
+        <span class="skill-tag">Matplotlib</span>
+        <span class="skill-tag">Seaborn</span>
       </div>
     </div>
-    <div class="skill-category">
-      <h3>📊 Data Science</h3>
-      <div class="skill-item">
-        <div class="skill-name"><span>Pandas & NumPy</span><span>85%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Scikit-learn</span><span>75%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Matplotlib/Seaborn</span><span>80%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
-      </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>NLP (TextBlob)</span><span>70%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🗄️</span>
+      <div class="skill-name">SQL & Databases</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--w: 80%"></div></div>
+      <div class="skill-percent">80%</div>
+      <div class="skill-tags">
+        <span class="skill-tag">SQLite</span>
+        <span class="skill-tag">MySQL</span>
+        <span class="skill-tag">DB Browser</span>
       </div>
     </div>
-    <div class="skill-category">
-      <h3>🛠️ Tools</h3>
-      <div class="skill-item">
-        <div class="skill-name"><span>Git & GitHub</span><span>80%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🤖</span>
+      <div class="skill-name">Machine Learning</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--w: 75%"></div></div>
+      <div class="skill-percent">75%</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Scikit-learn</span>
+        <span class="skill-tag">Random Forest</span>
+        <span class="skill-tag">NLP</span>
+        <span class="skill-tag">TF-IDF</span>
       </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Streamlit</span><span>75%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🌐</span>
+      <div class="skill-name">Web Development</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--w: 75%"></div></div>
+      <div class="skill-percent">75%</div>
+      <div class="skill-tags">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Streamlit</span>
       </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Looker Studio</span><span>70%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:70%"></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">🛠️</span>
+      <div class="skill-name">Tools & Workflow</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--w: 80%"></div></div>
+      <div class="skill-percent">80%</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">VS Code</span>
+        <span class="skill-tag">Kaggle</span>
       </div>
-      <div class="skill-item">
-        <div class="skill-name"><span>Kaggle</span><span>75%</span></div>
-        <div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div>
+    </div>
+    <div class="skill-card reveal">
+      <span class="skill-icon">📊</span>
+      <div class="skill-name">Data Visualization</div>
+      <div class="skill-bar"><div class="skill-bar-fill" style="--w: 80%"></div></div>
+      <div class="skill-percent">80%</div>
+      <div class="skill-tags">
+        <span class="skill-tag">Plotly</span>
+        <span class="skill-tag">Looker Studio</span>
+        <span class="skill-tag">WordCloud</span>
       </div>
     </div>
   </div>
@@ -364,169 +366,186 @@ footer span { color: var(--primary); }
 
 <!-- PROJECTS -->
 <section id="projects">
-  <h2 class="section-title">My <span>Projects</span></h2>
+  <div class="section-header reveal">
+    <span class="section-num">03</span>
+    <h2 class="section-title">Projects</h2>
+    <div class="section-line"></div>
+  </div>
   <div class="projects-grid">
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🎬</span>
-        <div class="project-links">
-          <a href="https://jesankhan2005-movie-recommendation-app.streamlit.app" target="_blank">Live</a>
-          <a href="https://github.com/jesankhan2005/movie-recommendation-app" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p1 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">🛡️</div>
+        <span class="project-number">01</span>
       </div>
       <div class="project-body">
-        <h3>Movie Recommendation App</h3>
-        <p>ML-powered app that recommends similar movies using Cosine Similarity from 5000+ titles.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">Streamlit</span>
-          <span class="tag">Scikit-learn</span><span class="tag">ML</span>
+        <div class="project-title">TruthGuard — Fake News Detector</div>
+        <p class="project-desc">AI-powered fake news detector using ML and NLP. Built for VU AI Hackathon 2026.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span><span class="tech-tag">Scikit-learn</span>
+          <span class="tech-tag">NLP</span><span class="tech-tag">Streamlit</span>
+        </div>
+        <div class="project-links">
+          <a href="https://jesankhan2005-truthguard-fake-news-detector.streamlit.app" target="_blank" class="project-link">↗ Live Demo</a>
+          <a href="https://github.com/jesankhan2005/truthguard-fake-news-detector" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🎮</span>
-        <div class="project-links">
-          <a href="https://jesankhan2005.github.io/hussle-harry-web" target="_blank">Live</a>
-          <a href="https://github.com/jesankhan2005/hussle-harry-web" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p2 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">🎬</div>
+        <span class="project-number">02</span>
       </div>
       <div class="project-body">
-        <h3>Hussle Harry — Browser Game</h3>
-        <p>Endless runner browser game where Harry escapes a bear through a jungle road collecting fruits.</p>
-        <div class="project-tags">
-          <span class="tag">HTML5</span><span class="tag">JavaScript</span>
-          <span class="tag">Canvas</span><span class="tag">Game Dev</span>
+        <div class="project-title">Movie Recommendation App</div>
+        <p class="project-desc">ML-powered app that recommends similar movies using Cosine Similarity from 5000+ titles.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span>
+          <span class="tech-tag">Scikit-learn</span><span class="tech-tag">Pandas</span>
+        </div>
+        <div class="project-links">
+          <a href="https://jesankhan2005-movie-recommendation-app.streamlit.app" target="_blank" class="project-link">↗ Live Demo</a>
+          <a href="https://github.com/jesankhan2005/movie-recommendation-app" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🚢</span>
-        <div class="project-links">
-          <a href="https://github.com/jesankhan2005/titanic-survival" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p3 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">💬</div>
+        <span class="project-number">03</span>
       </div>
       <div class="project-body">
-        <h3>Titanic Survival Prediction</h3>
-        <p>Kaggle competition — achieved 78.2% accuracy using Random Forest with feature engineering.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">Scikit-learn</span>
-          <span class="tag">Random Forest</span><span class="tag">Kaggle</span>
+        <div class="project-title">WhatsApp Chat Analyzer</div>
+        <p class="project-desc">Analyze WhatsApp chats — messages, timelines, word cloud, emoji analysis and more!</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span>
+          <span class="tech-tag">NLP</span><span class="tech-tag">Pandas</span>
+        </div>
+        <div class="project-links">
+          <a href="https://jesankhan2005-whatsapp-chat-analyzer.streamlit.app" target="_blank" class="project-link">↗ Live Demo</a>
+          <a href="https://github.com/jesankhan2005/whatsapp-chat-analyzer" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🔍</span>
-        <div class="project-links">
-          <a href="https://github.com/jesankhan2005/crime-data-analysis" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p4 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">✍️</div>
+        <span class="project-number">04</span>
       </div>
       <div class="project-body">
-        <h3>Chicago Crime Data Analysis</h3>
-        <p>Analyzed 7.8M+ crime records using Python and SQL to find patterns in crime types and locations.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">SQL</span>
-          <span class="tag">Pandas</span><span class="tag">Matplotlib</span>
+        <div class="project-title">Handwriting to Text OCR</div>
+        <p class="project-desc">Upload a handwritten image and convert it to text instantly using Tesseract OCR engine.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span>
+          <span class="tech-tag">OCR</span><span class="tech-tag">Tesseract</span>
+        </div>
+        <div class="project-links">
+          <a href="https://jesankhan2005-handwriting-ocr.streamlit.app" target="_blank" class="project-link">↗ Live Demo</a>
+          <a href="https://github.com/jesankhan2005/handwriting-ocr" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">😊</span>
-        <div class="project-links">
-          <a href="https://github.com/jesankhan2005/twitter-sentiment" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p5 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">🎮</div>
+        <span class="project-number">05</span>
       </div>
       <div class="project-body">
-        <h3>Twitter Sentiment Analysis</h3>
-        <p>NLP project to classify tweets as Positive, Negative, or Neutral using TextBlob.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span><span class="tag">NLP</span>
-          <span class="tag">TextBlob</span><span class="tag">Pandas</span>
+        <div class="project-title">BGMI Stats Tracker</div>
+        <p class="project-desc">Track BGMI and Free Fire player stats — K/D ratio, win rate, rank, headshot rate and more!</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span><span class="tech-tag">Streamlit</span>
+          <span class="tech-tag">Plotly</span><span class="tech-tag">Gaming</span>
+        </div>
+        <div class="project-links">
+          <a href="https://jesankhan2005-bgmi-stats-tracker.streamlit.app" target="_blank" class="project-link">↗ Live Demo</a>
+          <a href="https://github.com/jesankhan2005/bgmi-stats-tracker" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">💬</span>
-        <div class="project-links">
-          <a href="https://jesankhan2005-whatsapp-chat-analyzer.streamlit.app" target="_blank">Live</a>
-          <a href="https://github.com/jesankhan2005/whatsapp-chat-analyzer" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p6 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">🔍</div>
+        <span class="project-number">06</span>
       </div>
       <div class="project-body">
-        <h3>WhatsApp Chat Analyzer</h3>
-        <p>Analyze WhatsApp chats - messages, timelines, word cloud, emoji analysis and more!</p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Streamlit</span>
-          <span class="tag">NLP</span>
-          <span class="tag">Pandas</span>
+        <div class="project-title">Chicago Crime Data Analysis</div>
+        <p class="project-desc">Analyzed 7.8M+ crime records using Python and SQL to find patterns in crime types and locations.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span><span class="tech-tag">SQL</span>
+          <span class="tech-tag">Pandas</span><span class="tech-tag">Matplotlib</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/jesankhan2005/crime-data-analysis" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">✍️</span>
-        <div class="project-links">
-          <a href="https://jesankhan2005-handwriting-ocr.streamlit.app" target="_blank">Live</a>
-          <a href="https://github.com/jesankhan2005/handwriting-ocr" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p7 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">🚢</div>
+        <span class="project-number">07</span>
       </div>
       <div class="project-body">
-        <h3>Handwriting to Text OCR</h3>
-        <p>Upload a handwritten image and convert it to text instantly using Tesseract OCR.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Streamlit</span>
-          <span class="tag">OCR</span>
-          <span class="tag">Tesseract</span>
+        <div class="project-title">Titanic Survival Prediction</div>
+        <p class="project-desc">Kaggle competition — achieved 78.2% accuracy using Random Forest with feature engineering.</p>
+        <div class="project-tech">
+          <span class="tech-tag">Python</span><span class="tech-tag">Scikit-learn</span>
+          <span class="tech-tag">Random Forest</span><span class="tech-tag">Kaggle</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/jesankhan2005/titanic-survival" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🎮</span>
-        <div class="project-links">
-          <a href="https://jesankhan2005-bgmi-stats-tracker.streamlit.app" target="_blank">Live</a>
-          <a href="https://github.com/jesankhan2005/bgmi-stats-tracker" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p8 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">🎯</div>
+        <span class="project-number">08</span>
       </div>
       <div class="project-body">
-        <h3>BGMI Stats Tracker</h3>
-        <p>Track BGMI and Free Fire player stats — K/D ratio, win rate, rank, headshot rate and more!</p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">Streamlit</span>
-          <span class="tag">Plotly</span>
-          <span class="tag">Gaming</span>
+        <div class="project-title">Hussle Harry — Browser Game</div>
+        <p class="project-desc">Endless runner browser game where Harry escapes a bear through a jungle road collecting fruits.</p>
+        <div class="project-tech">
+          <span class="tech-tag">HTML5</span><span class="tech-tag">JavaScript</span>
+          <span class="tech-tag">Canvas</span><span class="tech-tag">Game Dev</span>
+        </div>
+        <div class="project-links">
+          <a href="https://jesankhan2005.github.io/hussle-harry-web" target="_blank" class="project-link">↗ Play Now</a>
+          <a href="https://github.com/jesankhan2005/hussle-harry-web" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
 
-    <div class="project-card">
-      <div class="project-header">
-        <span class="project-icon">🏏</span>
-        <div class="project-links">
-          <a href="https://github.com/jesankhan2005/ipl-sql-analysis" target="_blank">GitHub</a>
-        </div>
+    <div class="project-card p9 reveal">
+      <div class="project-img">
+        <div class="project-img-bg"></div>
+        <div class="project-img-icon">🏏</div>
+        <span class="project-number">09</span>
       </div>
       <div class="project-body">
-        <h3>IPL Cricket SQL Analysis</h3>
-        <p>Analyzed IPL match data (2008-2022) using SQL to find top teams, venues, and players.</p>
-        <div class="project-tags">
-          <span class="tag">SQL</span><span class="tag">SQLite</span>
-          <span class="tag">Data Analysis</span>
+        <div class="project-title">IPL Cricket SQL Analysis</div>
+        <p class="project-desc">Analyzed IPL match data (2008-2022) using SQL to find top teams, venues, and players.</p>
+        <div class="project-tech">
+          <span class="tech-tag">SQL</span><span class="tech-tag">SQLite</span>
+          <span class="tech-tag">Data Analysis</span>
+        </div>
+        <div class="project-links">
+          <a href="https://github.com/jesankhan2005/ipl-sql-analysis" target="_blank" class="project-link">⊞ GitHub</a>
         </div>
       </div>
     </div>
@@ -535,72 +554,135 @@ footer span { color: var(--primary); }
 </section>
 
 <!-- CONTACT -->
-<section id="contact" style="max-width:1100px;margin:0 auto;">
-  <h2 class="section-title">Get In <span>Touch</span></h2>
-  <div class="contact-grid">
-    <div class="contact-info">
-      <h3>Let's Connect! 👋</h3>
-      <p>I'm always open to new opportunities, collaborations, or just a friendly chat about data and technology!</p>
-      <div class="contact-item">
-        <span class="contact-icon">📧</span>
-        <div class="contact-detail">
-          <a href="mailto:jesankhan743357@gmail.com">jesankhan743357@gmail.com</a>
-          <p>Email me anytime!</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">📍</span>
-        <div class="contact-detail">
-          <a>Kolkata, West Bengal, India</a>
-          <p>Available for remote work</p>
-        </div>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">🎓</span>
-        <div class="contact-detail">
-          <a>MAKAUT University</a>
-          <p>B.Sc Data Science — 2nd Year</p>
-        </div>
-      </div>
-      <div class="social-links">
-        <a href="https://github.com/jesankhan2005" target="_blank" class="social-btn github-btn">🐙 GitHub</a>
-        <a href="https://www.kaggle.com/jesankhan2005" target="_blank" class="social-btn kaggle-btn">📊 Kaggle</a>
+<section id="contact">
+  <div class="section-header reveal">
+    <span class="section-num">04</span>
+    <h2 class="section-title">Contact</h2>
+    <div class="section-line"></div>
+  </div>
+  <div class="contact-inner">
+    <div class="contact-info reveal">
+      <h3>Let's build something <em>amazing</em> together.</h3>
+      <p>Have a project in mind, or just want to say hello? My inbox is always open. I'll get back to you as soon as possible.</p>
+      <div class="contact-links">
+        <a href="mailto:jesankhan743357@gmail.com" class="contact-link-item">
+          <span class="contact-link-icon">✉️</span>
+          <div class="contact-link-text">
+            <div class="contact-link-label">Email</div>
+            <div>jesankhan743357@gmail.com</div>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a href="https://linkedin.com/in/jesankhan2005" target="_blank" class="contact-link-item">
+          <span class="contact-link-icon">💼</span>
+          <div class="contact-link-text">
+            <div class="contact-link-label">LinkedIn</div>
+            <div>linkedin.com/in/jesankhan2005</div>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a href="https://github.com/jesankhan2005" target="_blank" class="contact-link-item">
+          <span class="contact-link-icon">🐙</span>
+          <div class="contact-link-text">
+            <div class="contact-link-label">GitHub</div>
+            <div>github.com/jesankhan2005</div>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
+        <a href="https://kaggle.com/jesankhan2005" target="_blank" class="contact-link-item">
+          <span class="contact-link-icon">📊</span>
+          <div class="contact-link-text">
+            <div class="contact-link-label">Kaggle</div>
+            <div>kaggle.com/jesankhan2005</div>
+          </div>
+          <span class="contact-link-arrow">→</span>
+        </a>
       </div>
     </div>
-    <div style="background:var(--card);padding:40px;border-radius:15px;border:1px solid rgba(0,212,170,0.1);">
-      <h3 style="margin-bottom:25px;font-size:20px;">Quick Message 💬</h3>
-      <div style="margin-bottom:20px;">
-        <label style="display:block;color:var(--gray);margin-bottom:8px;font-size:14px;">Your Name</label>
-        <input type="text" placeholder="Enter your name"
-          style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);
-          border:1px solid rgba(0,212,170,0.2);border-radius:8px;
-          color:var(--text);font-size:15px;outline:none;">
+    <form class="contact-form reveal" onsubmit="handleSubmit(event)">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="Your name">
       </div>
-      <div style="margin-bottom:20px;">
-        <label style="display:block;color:var(--gray);margin-bottom:8px;font-size:14px;">Your Email</label>
-        <input type="email" placeholder="Enter your email"
-          style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);
-          border:1px solid rgba(0,212,170,0.2);border-radius:8px;
-          color:var(--text);font-size:15px;outline:none;">
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="your@email.com">
       </div>
-      <div style="margin-bottom:25px;">
-        <label style="display:block;color:var(--gray);margin-bottom:8px;font-size:14px;">Message</label>
-        <textarea placeholder="Write your message..." rows="4"
-          style="width:100%;padding:12px 16px;background:rgba(255,255,255,0.05);
-          border:1px solid rgba(0,212,170,0.2);border-radius:8px;
-          color:var(--text);font-size:15px;outline:none;resize:vertical;"></textarea>
+      <div class="form-group">
+        <label class="form-label">Subject</label>
+        <input type="text" class="form-input" placeholder="Project Collaboration">
       </div>
-      <a href="mailto:jesankhan743357@gmail.com" class="btn btn-primary" style="display:block;text-align:center;">
-        Send Message 🚀
-      </a>
-    </div>
+      <div class="form-group">
+        <label class="form-label">Message</label>
+        <textarea class="form-textarea" placeholder="Tell me about your project..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Message →</button>
+    </form>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>Designed & Built with ❤️ by <span>Jesan Khan</span> | © 2025 All Rights Reserved</p>
+  <div class="logo">JK<span>.</span></div>
+  <p>© 2025 Jesan Khan. Built with ❤️ in Kolkata.</p>
+  <div class="footer-socials">
+    <a href="https://github.com/jesankhan2005" target="_blank" class="footer-social">GitHub</a>
+    <a href="https://linkedin.com/in/jesankhan2005" target="_blank" class="footer-social">LinkedIn</a>
+    <a href="https://kaggle.com/jesankhan2005" target="_blank" class="footer-social">Kaggle</a>
+  </div>
 </footer>
 
+<script>
+  const cursor = document.getElementById('cursor');
+  const ring = document.getElementById('cursorRing');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.transform = `translate(${mx - 6}px, ${my - 6}px)`;
+  });
+
+  function animateRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.transform = `translate(${rx - 18}px, ${ry - 18}px)`;
+    requestAnimationFrame(animateRing);
+  }
+  animateRing();
+
+  document.querySelectorAll('a, button, .btn').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.style.width = '60px';
+      ring.style.height = '60px';
+    });
+    el.addEventListener('mouseleave', () => {
+      ring.style.width = '36px';
+      ring.style.height = '36px';
+    });
+  });
+
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver(entries => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => {
+          e.target.classList.add('visible');
+          e.target.querySelectorAll('.skill-bar-fill').forEach(bar => bar.classList.add('animated'));
+        }, i * 80);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.1 });
+  revealEls.forEach(el => io.observe(el));
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    alert('Message sent! I will get back to you soon.');
+  }
+</script>
 </body>
 </html>
