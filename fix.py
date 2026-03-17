@@ -1,6 +1,4 @@
 content = open('index.html', 'r').read()
-
-# ভুল অংশ - IPL card এর ভেতরে WhatsApp card আছে
 old = '''      <div class="project-body">
             <div class="project-card">
       <div class="project-header">
